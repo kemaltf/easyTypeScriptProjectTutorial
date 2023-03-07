@@ -12,7 +12,7 @@ const add = (a: number, b: number, c: number = 10) => {
 };
 add(5, 10);
 
-const minus = (a: number, b: number) => {
+const minus = (a: number, b: number): number => {
   return a - b;
 };
 let resMinus = minus(4, 3);
