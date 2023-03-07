@@ -1,5 +1,5 @@
-let greet = () => {
-  console.log("Hello!");
-};
+let greet: Function;
 
-greet = "hello"; // it cannot be a string because we have defined before that greet is function
+greet = () => {
+  console.log("hello");
+};
