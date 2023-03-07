@@ -7,7 +7,7 @@ greet = () => {
 // if we want to add optional parameter we can use 2 ways
 // first, add '?' before ':' e.g: c?:
 // second, we can add optional paramteter by using default value
-const add = (a: number, b: number, c: number = 10) => {
+const add = (a: number, b: number, c: number = 10): void => {
   console.log(a + b);
 };
 add(5, 10);
