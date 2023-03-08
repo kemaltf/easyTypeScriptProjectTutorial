@@ -1,8 +1,8 @@
 // classes
 class Invoice {
-  client: string;
-  details: string;
-  amount: number;
+  readonly client: string;
+  private details: string;
+  public amount: number;
 
   constructor(c: string, d: string, a: number) {
     this.client = c;
@@ -21,11 +21,15 @@ console.log(invOne, invTwo);
 let invoices: Invoice[] = [];
 invoices.push(invOne);
 invoices.push(invTwo);
-
+// readonly cannot re-assign but can read inside or outside the class
 invOne.client = "yoshi";
 invTwo.amount = 2000;
 
 console.log("changed data:", invOne, invTwo);
+invoices.forEach((inv) => {
+  // private only can read inside the class
+  console.log(inv.client, inv.details, inv.amount, inv.format());
+});
 
 // const form = document.querySelector("form");
 const form = document.querySelector(".new-item-form") as HTMLFormElement;
