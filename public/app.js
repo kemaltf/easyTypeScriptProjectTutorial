@@ -1,15 +1,4 @@
-"use strict";
-// classes
-class Invoice {
-    constructor(c, d, a) {
-        this.client = c;
-        this.details = d;
-        this.amount = a;
-    }
-    format() {
-        return `${this.client} owes $${this.amount} for ${this.details}`;
-    }
-}
+import { Invoice } from "./classes/Invoice.js";
 const invOne = new Invoice("mario", "work on the mario website", 250);
 const invTwo = new Invoice("luigi", "work on the luigi website", 300);
 console.log(invOne, invTwo);
@@ -18,12 +7,13 @@ let invoices = [];
 invoices.push(invOne);
 invoices.push(invTwo);
 // readonly cannot re-assign but can read inside or outside the class
-invOne.client = "yoshi";
+// invOne.client = "yoshi";
 invTwo.amount = 2000;
 console.log("changed data:", invOne, invTwo);
 invoices.forEach((inv) => {
     // private only can read inside the class
-    console.log(inv.client, inv.details, inv.amount, inv.format());
+    // console.log(inv.client, inv.details, inv.amount, inv.format());
+    console.log(inv.client, inv.amount, inv.format());
 });
 // const form = document.querySelector("form");
 const form = document.querySelector(".new-item-form");
